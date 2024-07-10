@@ -1,0 +1,13 @@
+{
+  "name": "11ty-links",
+  "version": "0.0.1",
+  "description": "A Linktree alternative using 11ty",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Benjamin Howe (https://www.beh.uk/)",
+  "license": "MIT",
+  "dependencies": {
+    "@11ty/eleventy": "3.0.0-alpha.14"
+  }
+}
