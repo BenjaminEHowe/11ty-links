@@ -2,6 +2,7 @@
   "name": "11ty-links",
   "version": "0.0.1",
   "description": "A Linktree alternative using 11ty",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

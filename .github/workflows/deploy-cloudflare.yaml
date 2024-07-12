@@ -22,7 +22,7 @@ jobs:
         with:
           name: 11ty-website
           if-no-files-found: error
-          path: _site/
+          path: site/
 
   deploy-to-cloudflare-pages:
     needs: build-11ty
@@ -38,10 +38,10 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: 11ty-website
-          path: _site
+          path: site
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy _site --project-name=11ty-links --branch=${{ steps.extract_branch.outputs.branch }} --commit-dirty=true
+          command: pages deploy site --project-name=11ty-links --branch=${{ steps.extract_branch.outputs.branch }} --commit-dirty=true
