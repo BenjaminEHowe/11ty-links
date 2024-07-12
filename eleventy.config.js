@@ -1,4 +1,5 @@
 import browserslist from "browserslist";
+import eleventyAutoCacheBuster from "eleventy-auto-cache-buster";
 import htmlmin from "html-minifier-terser";
 import { bundle, browserslistToTargets } from "lightningcss";
 import path from "path";
@@ -6,6 +7,8 @@ import path from "path";
 let targets = browserslistToTargets(browserslist("> 0.2% and not dead"));
 
 export default async function (eleventyConfig) {
+  eleventyConfig.addPlugin(eleventyAutoCacheBuster);
+
   eleventyConfig.addTransform("htmlmin", function (content) {
 		if ((this.page.outputPath || "").endsWith(".html")) {
 			let minified = htmlmin.minify(content, {
