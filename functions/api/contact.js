@@ -9,6 +9,7 @@ export async function onRequest(context) {
   const fields = Object.fromEntries(formData.entries());
   fields.cf = context.request.cf;
   fields.headers = Object.fromEntries(context.request.headers.entries());
+  const url = new URL(context.request.url);
   if (fields[HONEYPOT_FIELD] === "") {
     delete fields[HONEYPOT_FIELD];
     const sent = await sendFormViaResend({
@@ -16,14 +17,14 @@ export async function onRequest(context) {
       emailFrom: context.env.EMAIL_FROM,
       emailTo: context.env.EMAIL_TO,
       fields,
-      subject: `Form submission from ${new URL(context.request.url).hostname}`,
+      subject: `Form submission from ${url.hostname}`,
     });
 
     if (!sent) {
-      return new Response("Oops! Something went wrong. Please try submitting the form again.", { status: 500 });
+      return Response.redirect(`https://${url.hostname}/contact-fail`, 303);
     }
   }
-  return Response.redirect(context.request.headers.get("Referer"), 303);
+  return Response.redirect(`https://${url.hostname}/contact-success`, 303);
 }
 
 async function sendFormViaResend({
