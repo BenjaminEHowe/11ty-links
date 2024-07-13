@@ -32,4 +32,4 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy site --project-name=11ty-links --branch=${{ steps.extract_branch.outputs.branch }} --commit-dirty=true
+          command: pages deploy site --project-name=${{ vars.CLOUDFLARE_PAGES_PROJECT_NAME }} --branch=${{ steps.extract_branch.outputs.branch }} --commit-dirty=true
