@@ -1,4 +1,6 @@
 export async function onRequest(context) {
+  const HONEYPOT_FIELD = "name";
+  
   if (context.request.method !== "POST") {
     return new Response("Invalid request method", { status: 405 });
   }
@@ -7,6 +9,12 @@ export async function onRequest(context) {
   const fields = Object.fromEntries(formData.entries());
   fields.cf = context.request.cf;
   fields.headers = Object.fromEntries(context.request.headers.entries());
+  if (fields[HONEYPOT_FIELD] !== "") {
+    return Response.redirect(context.request.headers.get("Referer"), 303);
+  } else {
+    delete fields[HONEYPOT_FIELD];
+  }
+
   const url = new URL(context.request.url); 
 
   const sent = await sendFormViaResend({
