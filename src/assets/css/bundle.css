@@ -61,3 +61,22 @@ ul, ol {
 p + ul {
   margin-top: -0.375rem;
 }
+
+/* links */
+
+ul#links {
+  list-style-type: none;
+  padding: 0;
+}
+
+ul#links li a {
+  background: #00b;
+  border-radius: 8px;
+  color: #fff;
+  display: block;
+  margin: 25px 0;
+  padding: 10px 0;
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
+}
