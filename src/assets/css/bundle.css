@@ -21,12 +21,13 @@ h1, h2, h3, h4, h5, h6 {
   padding: 1rem 0;
 }
 
-p, ol, ul {
+p, ol, ul, li {
   line-height: 1.5;
 }
 
 h1 {
   font-size: 2em;
+  text-align: center;
 }
 
 h2 {
@@ -59,26 +60,4 @@ ul, ol {
 
 p + ul {
   margin-top: -0.375rem;
-}
-
-code, pre {
-  font-family: monospace;
-}
-
-table {
-  border: solid 1px #000;
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-thead th {
-  border: solid 1px #000;
-  font-weight: bold;
-  padding: 10px;
-  text-align: left;
-}
-
-tbody td {
-  border: solid 1px #000;
-  padding: 10px;
 }
