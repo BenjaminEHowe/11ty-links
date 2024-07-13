@@ -9,12 +9,20 @@
       <meta name="description" content="{{ description }}">
     {% endif %}
     <meta property="og:title" content="{{ title }}">
+    <meta property="twitter:title" content="{{ title }}">
     {% if description %}
       <meta name="og:description" content="{{ description }}">
+      <meta name="twitter:description" content="{{ description }}">
+    {% endif %}
+    {% if image %}
+      <meta name="og:image" content="{{ image }}">
+      <meta name="titter:image" content="{{ image }}">
     {% endif %}
     <meta name="generator" content="{{ eleventy.generator }}">
   </head>
   <body>
-    {{ content | safe }}
+    <div id="container">
+      {{ content | safe }}
+    </div>
   </body>
 </html>
