@@ -2,12 +2,12 @@
 
 html {
   font-family: sans-serif;
+  padding: 10px;
 }
 
 body {
   max-width: 600px;
   margin: 0 auto;
-  padding: 10px;
   width: 100%;
 }
 
