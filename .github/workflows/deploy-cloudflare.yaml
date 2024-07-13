@@ -6,7 +6,7 @@ on: push
 
 jobs:
 
-  build-11ty:
+  build-and-deploy:
     runs-on: ubuntu-22.04
     container:
       image: node:20.15.1
@@ -23,22 +23,10 @@ jobs:
           name: 11ty-website
           if-no-files-found: error
           path: site/
-
-  deploy-to-cloudflare-pages:
-    needs: build-11ty
-    runs-on: ubuntu-22.04
-    steps:
-      - name: Check out repository
-        uses: actions/checkout@v4
       - name: Extract branch name
         shell: bash
         run: echo "branch=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}" >> $GITHUB_OUTPUT
         id: extract_branch
-      - name: Download built website
-        uses: actions/download-artifact@v4
-        with:
-          name: 11ty-website
-          path: site
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3
         with:

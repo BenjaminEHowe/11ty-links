@@ -16,3 +16,10 @@ The easiest way to develop locally is using [Docker Desktop](https://www.docker.
 - macOS & Linux (bash): `docker run -it --rm -v "$PWD":/app -w /app -p 127.0.0.1:8080:8080 node:20.15.1 sh -c "cd /app && npm install && npx @11ty/eleventy --serve"`
 
 Once the development server is running, the website will be available at http://localhost:8080/.
+
+## Cloudflare Pages environment variables
+
+The contact form requires a few environemnt variables to be populated:
+- `EMAIL_FROM` -- the email address that contact form submissions should be sent from
+- `EMAIL_TO` -- the email address that contact form submissions should be sent to
+- `RESEND_KEY` -- an API key for [Resend](https://resend.com/)
