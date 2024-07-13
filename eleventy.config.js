@@ -9,7 +9,9 @@ let targets = browserslistToTargets(browserslist("> 0.2% and not dead"));
 export default async function (eleventyConfig) {
   eleventyConfig.addDataExtension("json", (contents) => JSON.parse(contents) );
 
-  eleventyConfig.addPlugin(eleventyAutoCacheBuster);
+  eleventyConfig.addPlugin(eleventyAutoCacheBuster, {
+    hashTruncate: 8,
+  });
 
   eleventyConfig.addTransform("htmlmin", function (content) {
 		if ((this.page.outputPath || "").endsWith(".html")) {

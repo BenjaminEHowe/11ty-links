@@ -11,7 +11,7 @@
   "dependencies": {
     "@11ty/eleventy": "3.0.0-alpha.14",
     "browserslist": "^4.23.2",
-    "eleventy-auto-cache-buster": "^0.3.0",
+    "eleventy-auto-cache-buster": "^0.4.0",
     "html-minifier-terser": "^7.2.0",
     "lightningcss": "^1.25.1",
     "wrangler": "^3.64.0"
