@@ -9,6 +9,8 @@ let targets = browserslistToTargets(browserslist("> 0.2% and not dead"));
 export default async function (eleventyConfig) {
   eleventyConfig.addDataExtension("json", (contents) => JSON.parse(contents) );
 
+  eleventyConfig.addPassthroughCopy("11ty-src/assets/img");
+
   eleventyConfig.addPlugin(eleventyAutoCacheBuster, {
     hashTruncate: 8,
   });
