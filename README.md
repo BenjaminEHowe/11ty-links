@@ -6,7 +6,7 @@
 
 This repository contains a self-hosted [Linktree](https://linktr.ee/)-style website.
 It is deployed to https://11ty-links.pages.dev/.
-We deploy using GitHub Actions as opposed to the [native Cloudflare Pages git integration](https://developers.cloudflare.com/pages/get-started/git-integration/) so that the build settings are captured within the `git` repository, and so that we can use the same container images for local development.
+We [deploy using GitHub Actions](/.github/workflows/deploy-cloudflare.yaml) as opposed to the [native Cloudflare Pages git integration](https://developers.cloudflare.com/pages/get-started/git-integration/) so that the build settings are captured within the `git` repository, and so that we can use the same container images for local development.
 
 To create your own version of this website:
 - [ ] Create a new Cloudflare Pages project. Select the option to create using direct upload, but do not upload any files yet (we will upload files automatically using GitHub Actions).
