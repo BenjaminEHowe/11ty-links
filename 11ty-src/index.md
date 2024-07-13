@@ -1,7 +1,7 @@
 ---
 layout: links.njk
-title: 11ty Links
+title: Eleventy (11ty) Links
 ---
 
 # {{ title }}
-A Linktree alternative using 11ty, hosted on Cloudflare Pages.
+A Linktree alternative using Eleventy, hosted on Cloudflare Pages.

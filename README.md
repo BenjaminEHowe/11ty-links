@@ -1,6 +1,6 @@
-# 11ty Links
+# Eleventy (11ty) Links
 
-[![11ty Badge](https://img.shields.io/badge/Eleventy-222?logo=eleventy&logoColor=fff&style=flat)](https://www.11ty.dev/)
+[![Eleventy Badge](https://img.shields.io/badge/Eleventy-222?logo=eleventy&logoColor=fff&style=flat)](https://www.11ty.dev/)
 [![Cloudflare Pages Badge](https://img.shields.io/badge/Cloudflare%20Pages-F38020?logo=cloudflarepages&logoColor=fff&style=flat)](https://pages.cloudflare.com/)
 [![GitHub Actions Badge](https://img.shields.io/badge/GitHub%20Actions-2088FF?logo=githubactions&logoColor=fff&style=flat)](https://github.com/features/actions)
 
