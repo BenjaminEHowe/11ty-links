@@ -1,5 +1,5 @@
 ---
-layout: default.njk
+layout: links.njk
 title: 11ty Links
 ---
 
