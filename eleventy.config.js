@@ -7,6 +7,8 @@ import path from "path";
 let targets = browserslistToTargets(browserslist("> 0.2% and not dead"));
 
 export default async function (eleventyConfig) {
+  eleventyConfig.addDataExtension("json", (contents) => JSON.parse(contents) );
+
   eleventyConfig.addPlugin(eleventyAutoCacheBuster);
 
   eleventyConfig.addTransform("htmlmin", function (content) {
