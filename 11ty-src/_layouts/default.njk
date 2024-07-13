@@ -8,6 +8,10 @@
     {% if description %}
       <meta name="description" content="{{ description }}">
     {% endif %}
+    <meta property="og:title" content="{{ title }}">
+    {% if description %}
+      <meta name="og:description" content="{{ description }}">
+    {% endif %}
     <meta name="generator" content="{{ eleventy.generator }}">
   </head>
   <body>
