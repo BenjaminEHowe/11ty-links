@@ -1,6 +1,6 @@
 export async function onRequest(context) {
   const HONEYPOT_FIELD = "name";
-  
+
   if (context.request.method !== "POST") {
     return new Response("Invalid request method", { status: 405 });
   }
@@ -39,7 +39,7 @@ async function sendFormViaResend({
   fields,
   subject,
 }) {
-  const send_request = new Request("https://api.resend.com/emails", {
+  const send_response = await fetch(new Request("https://api.resend.com/emails", {
     method: "POST",
     headers: {
       "Authorization": `Bearer ${apiKey}`,
@@ -51,10 +51,7 @@ async function sendFormViaResend({
       subject,
       text: formToText(fields),
     }),
-  });
-
-  const send_response = await fetch(send_request);
-
+  }));
   return send_response.ok;
 }
 
