@@ -23,6 +23,7 @@ To create your own version of this website:
     - `CLOUDFLARE_PAGES_PROJECT_NAME`: the name of the Cloudflare Pages project that you created earlier.
 - [ ] Customise [the list of links](/11ty-src/_data/links.json) as appropriate.
 - [ ] Customise [the text on the home page](/11ty-src/index.md) as appropriate.
+- [ ] Replace [the image used when sharing via social media](/11ty-src/assets/img/card.png).
 - [ ] (optional) Customise [the CSS](/11ty-src/assets/css/bundle.css) to change the colours etc.
 - [ ] (optional) Delete [the lipsum file](/11ty-src/lipsum.md).
 
