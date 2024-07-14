@@ -1,14 +1,3 @@
----
-layout: default.njk
----
-
-{{ content | safe }}
-<ul id="links">
-  {%- for link in links -%}
-    <li><a href="{{ link.url }}">{{ link.name }}</a></li>
-  {%- endfor -%}
-</ul>
-<h2>Contact</h2>
 <form id="contact-form" method="post" action="/api/contact">
   <fieldset style="display:none">
     <label for="name">Leave blank if you're human:</label>

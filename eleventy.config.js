@@ -69,7 +69,9 @@ export default async function (eleventyConfig) {
     dir: {
       input: '11ty-src',
       output: 'site',
-      layouts: '_layouts'
-    }
+      includes: '_includes',
+      layouts: '_layouts',
+    },
+    markdownTemplateEngine: 'njk',
   };
 };
